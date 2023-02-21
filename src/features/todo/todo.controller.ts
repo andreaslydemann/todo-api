@@ -1,6 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import {
-  ApiBearerAuth,
   ApiOkResponse,
   ApiOperation,
   ApiTags,
@@ -12,7 +11,6 @@ import { todos } from './todo.mock';
 
 @Controller('todos')
 @ApiTags('todos')
-@ApiBearerAuth()
 export class TodoController {
   @Get()
   @ApiOperation({

@@ -8,15 +8,7 @@ async function bootstrap() {
   app.enableShutdownHooks();
   app.enableCors();
   app.setGlobalPrefix('api/v1');
-  app.use(
-    ['/docs', '/docs-json'],
-    basicAuth({
-      challenge: true,
-      users: {
-        andreaslydemann: '3ed4rf#ED€RF',
-      },
-    }),
-  );
+  app.use(['/docs', '/docs-json']);
 
   const config = new DocumentBuilder()
     .setTitle('Todo API Staging')
