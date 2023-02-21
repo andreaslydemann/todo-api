@@ -8,23 +8,7 @@ import {
 } from '@nestjs/swagger';
 import { ErrorResponse } from '../shared/shared.dto';
 import { TodoResponse } from './todo.dto';
-
-export const todos = [
-  {
-    amount: 1278.17,
-    name: 'Euro',
-    id: '876fdb81-4169-47c2-8706-8d1a763f989c',
-    percentage: 50,
-    referenceId: 'DK329545844556112',
-  },
-  {
-    amount: 10595.95,
-    name: 'Danish Krone',
-    id: '6fc48749-5c57-4580-8c0a-79152c519ce5',
-    percentage: 20,
-    referenceId: 'DK329545844556111',
-  },
-];
+import { todos } from './todo.mock';
 
 @Controller('todos')
 @ApiTags('todos')
@@ -56,7 +40,7 @@ export class TodoController {
     type: TodoResponse,
   })
   @ApiUnauthorizedResponse({
-    description: 'Current user not authorized to fetch transactions',
+    description: 'Current user not authorized to fetch todos',
     type: ErrorResponse,
   })
   async getTodoById(@Param('id') id: string): Promise<TodoResponse> {

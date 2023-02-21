@@ -5,7 +5,5 @@ import { TodoController } from './todo.controller';
   controllers: [TodoController],
 })
 export class TodoModule implements NestModule {
-  configure(consumer: MiddlewareConsumer) {
-    // do nothing
-  }
+  configure(consumer: MiddlewareConsumer) {}
 }
