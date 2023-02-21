@@ -44,6 +44,6 @@ export class TodoController {
     type: ErrorResponse,
   })
   async getTodoById(@Param('id') id: string): Promise<TodoResponse> {
-    return todos[0];
+    return todos.find((todo) => todo.id === id);
   }
 }
